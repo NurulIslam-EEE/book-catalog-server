@@ -23,6 +23,7 @@ const bookSchema = mongoose.Schema(
     image: {
       type: String,
     },
+    reviews: [],
   },
   {
     timestamps: true,
