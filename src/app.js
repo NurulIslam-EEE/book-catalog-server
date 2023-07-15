@@ -10,7 +10,7 @@ app.use(cors());
 
 // route
 
-app.use("/api/v1/book");
+// app.use("/api/v1/book",);
 
 app.get("/", (req, res) => {
   res.send("Route is working! YaY!");
