@@ -9,12 +9,13 @@ app.use(express.json());
 app.use(cors());
 
 // route
-
-// app.use("/api/v1/book",);
-
 app.get("/", (req, res) => {
   res.send("Route is working! YaY!");
 });
+
+const bookRoute = require("../src/app/modules/book/book.route");
+
+app.use("/api/v1/book", bookRoute);
 
 // posting to database
 
