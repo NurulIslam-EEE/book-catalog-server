@@ -20,28 +20,9 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: [true, "Please provide publication date"],
     },
-
-    imageUrls: [
-      {
-        type: String,
-        required: true,
-        validate: {
-          validator: (value) => {
-            if (Array.isArray(value)) {
-              return false;
-            }
-            let isValid = true;
-            value.forEach((url) => {
-              if (!validator.isURL(url)) {
-                isValid = false;
-              }
-            });
-            return isValid;
-          },
-          message: "please provide a valid image",
-        },
-      },
-    ],
+    image: {
+      type: String,
+    },
   },
   {
     timestamps: true,
