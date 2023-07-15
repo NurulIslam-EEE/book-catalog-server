@@ -24,6 +24,13 @@ const bookSchema = mongoose.Schema(
       type: String,
     },
     reviews: [],
+    addedBy: {
+      email: {
+        type: String,
+        required: [true, "Please provide owner email"],
+      },
+      name: {},
+    },
   },
   {
     timestamps: true,
