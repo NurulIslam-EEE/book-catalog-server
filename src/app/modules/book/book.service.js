@@ -8,6 +8,12 @@ exports.createBookService = async (data) => {
   return result;
 };
 
+exports.deleteBookService = async (id) => {
+  const result = await Book.deleteOne(id);
+
+  return result;
+};
+
 exports.getBookService = async (filters, paginationOptions) => {
   const { searchTerm, ...filtersData } = filters;
   const { page, limit, skip, sortBy, sortOrder } =

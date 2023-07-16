@@ -14,8 +14,10 @@ app.get("/", (req, res) => {
 });
 
 const bookRoute = require("../src/app/modules/book/book.route");
+const userRoute = require("../src/app/modules/users/user.route");
 
 app.use("/api/v1/books", bookRoute);
+app.use("/api/v1/users", userRoute);
 
 // posting to database
 
