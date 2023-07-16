@@ -9,7 +9,7 @@ exports.createBookService = async (data) => {
 };
 
 exports.deleteBookService = async (id) => {
-  const result = await Book.deleteOne(id);
+  const result = await Book.deleteOne({ _id: id });
 
   return result;
 };
