@@ -13,6 +13,7 @@ const wishlistSchema = mongoose.Schema(
       required: [true, "Please provide  email"],
     },
     wishlist: [{ type: ObjectId, ref: "Book" }],
+    readingLists: [],
   },
   {
     timestamps: true,

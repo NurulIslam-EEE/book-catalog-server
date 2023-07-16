@@ -3,6 +3,9 @@ const router = express.Router();
 
 const userController = require("./user.controller");
 
-router.route("/:email").patch(userController.updateSingleBook);
+router
+  .route("/:email")
+  .get(userController.getWishlist)
+  .patch(userController.addWishlistController);
 
 module.exports = router;

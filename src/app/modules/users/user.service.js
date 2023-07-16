@@ -15,3 +15,9 @@ exports.addWishList = async (email, data) => {
 
   return result;
 };
+
+exports.getWishLists = async (email) => {
+  const exist = await User.findOne({ email: email }).populate("wishlist");
+
+  return exist;
+};
