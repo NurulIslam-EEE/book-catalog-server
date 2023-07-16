@@ -4,6 +4,7 @@ const router = express.Router();
 const bookController = require("./book.controller");
 
 router.route("/").post(bookController.postBook).get(bookController.getBooks);
+router.route("/update/:id").patch(bookController.updateSingleBook);
 
 router
   .route("/:id")

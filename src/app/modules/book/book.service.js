@@ -49,6 +49,14 @@ exports.getSingleService = async (id) => {
   return result;
 };
 
+exports.updateSingleService = async (id, data) => {
+  console.log("serrrrr", id, data);
+  const result = await Book.findOneAndUpdate({ _id: id }, data, {
+    new: true,
+  });
+  return result;
+};
+
 exports.postReviewService = async (id, data) => {
   const result = await Book.findOneAndUpdate(
     { _id: id },
