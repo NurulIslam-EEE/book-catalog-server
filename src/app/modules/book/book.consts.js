@@ -1,3 +1,9 @@
-const bookSearchableFields = ["searchTerm", "title", "author", "genre"];
+const bookSearchableFields = [
+  "searchTerm",
+  "title",
+  "author",
+  "genre",
+  "publicationDate",
+];
 
 module.exports = bookSearchableFields;
