@@ -44,6 +44,10 @@ exports.getBookService = async (filters, paginationOptions) => {
   // console.log("result", data, result);
   return result;
 };
+exports.getSingleService = async (id) => {
+  const result = await Book.findOne({ _id: id });
+  return result;
+};
 
 exports.postReviewService = async (id, data) => {
   const result = await Book.findOneAndUpdate(

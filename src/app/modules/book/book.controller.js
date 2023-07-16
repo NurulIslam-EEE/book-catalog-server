@@ -6,6 +6,7 @@ const {
   getBookService,
   postReviewService,
   deleteReviewService,
+  getSingleService,
 } = require("./book.service");
 const { StatusCodes } = require("http-status-codes");
 
@@ -30,6 +31,22 @@ exports.getBooks = async (req, res) => {
   console.log("fffff", filters);
   try {
     const result = await getBookService(filters, paginationOptions);
+    res.status(200).json({
+      status: "success",
+      data: result,
+    });
+  } catch (err) {
+    res.status(StatusCodes.BAD_REQUEST).json({
+      status: "fail",
+      message: err.message,
+    });
+  }
+};
+
+exports.getSingle = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const result = await getSingleService(id);
     res.status(200).json({
       status: "success",
       data: result,
